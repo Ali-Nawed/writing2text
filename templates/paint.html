@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Paint App</title>    
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <!-- Bokeh includes-->
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script>
+
+</head>
+<body onload="pen()">
+
+         <canvas id='paint' width='400' height='400' style='border: 5px solid #000000; background-color: #000000;'></canvas>
+
+        <br>
+        <button id='cleartool' type='button' style='height: 25px; width: 100px;' onclick='reset()'>Clear</button>
+        <button id='predtool' type='button' style='height: 25px; width: 100px;' onclick='predictnum()'>Predict</button>
+        <b>Prediction: </b>
+        <b id='prediction'></b>
+        
+    <div id='mychart'>
+        {% for plot in plots %}
+            {% for part in plot %}
+                {{part | safe}}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <script src="{{url_for('static', filename='draw.js')}}"></script>
+    
+</body>
+</html>
