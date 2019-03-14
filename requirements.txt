@@ -3,3 +3,4 @@ numpy==1.16.2
 Keras==2.2.4
 bokeh==1.0.4
 Pillow==5.4.1
+gunicorn==19.9.0
