@@ -18,7 +18,7 @@
         <b>Prediction: </b>
         <b id='prediction'></b>
         
-    <div id='mychart'>
+    <div id='mychart' style="position: absolute; top: 10px; left: 420px;">
         {% for plot in plots %}
             {% for part in plot %}
                 {{part | safe}}
